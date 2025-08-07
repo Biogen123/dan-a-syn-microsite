@@ -1,59 +1,135 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dan & SYN Autoservis</title>
-    <style>
-        body {
-            background: linear-gradient(to right, #1e1e1e, #2e2e2e);
-            color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        .hero {
-            margin-top: 40px;
-        }
-        .chatbox {
-            background: #333;
-            border-radius: 10px;
-            padding: 20px;
-            width: 100%;
-            max-width: 400px;
-            margin: 40px auto;
-            text-align: left;
-        }
-        .chatbox p {
-            margin: 10px 0;
-        }
-        .question {
-            color: #f90;
-        }
-        .answer {
-            color: #0f0;
-        }
-        img.walking {
-            margin: 30px auto;
-            display: block;
-            width: 300px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Autocentrum Dan a Syn</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #1c1c1c, #2b2b2b);
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      color: orange;
+    }
+
+    .dan-wrapper {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .dan-animated {
+      width: 120px;
+      position: absolute;
+      bottom: 0;
+      animation: walk 10s linear infinite;
+    }
+
+    @keyframes walk {
+      0% { left: -150px; }
+      100% { left: 100%; }
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 3rem;
+    }
+
+    th, td {
+      border: 1px solid orange;
+      padding: 1rem;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+    }
+
+    .chatbot {
+      background: #1e1e1e;
+      padding: 1rem;
+      border: 2px solid orange;
+      border-radius: 10px;
+    }
+
+    .chatbot h2 {
+      margin-top: 0;
+      color: orange;
+    }
+
+    .question {
+      margin: 1rem 0;
+    }
+
+    .question button {
+      background-color: orange;
+      border: none;
+      padding: 0.5rem 1rem;
+      color: black;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .answer {
+      margin-top: 0.5rem;
+      color: #aaa;
+    }
+  </style>
 </head>
 <body>
-    <h1>Vítejte v Autocentru Dan & SYN</h1>
-    <div class="hero">
-        <img src="dan_syn_chuze.gif" alt="Dan a Syn jdou" class="walking">
+
+  <h1>Autocentrum Dan a Syn</h1>
+
+  <div class="dan-wrapper">
+    <img src="dan-chodi.png" alt="Dan jde" class="dan-animated"/>
+  </div>
+
+  <table>
+    <tr>
+      <th>Služba</th>
+      <th>Cena</th>
+    </tr>
+    <tr>
+      <td>STK + Emise</td>
+      <td>1 500 Kč</td>
+    </tr>
+    <tr>
+      <td>Výměna oleje + filtr</td>
+      <td>990 Kč</td>
+    </tr>
+    <tr>
+      <td>Příprava na STK</td>
+      <td>od 800 Kč</td>
+    </tr>
+  </table>
+
+  <div class="chatbot">
+    <h2>Chytrý chatbot</h2>
+
+    <div class="question">
+      <button onclick="toggleAnswer('answer1')">Kdy můžu na STK?</button>
+      <div id="answer1" class="answer" style="display:none;">V nejbližším volném termínu – třeba zítra v 7:30. Chcete rezervovat?</div>
     </div>
 
-    <div class="chatbox">
-        <p class="question">❓ Potřebuji STK – kdy můžu přijet?</p>
-        <p class="answer">🟢 V 7:30 máme volno – chcete tento termín, nebo jiný?</p>
-        <p class="question">❓ Děláte i výměnu oleje?</p>
-        <p class="answer">🟢 Ano, olej a filtr vyměníme na počkání – volejte 723 456 789.</p>
+    <div class="question">
+      <button onclick="toggleAnswer('answer2')">Kolik stojí výměna oleje?</button>
+      <div id="answer2" class="answer" style="display:none;">Základní výměna oleje s filtrem stojí 990 Kč.</div>
     </div>
+  </div>
 
-    <p>📞 <strong>723 456 789</strong> | ✉️ <strong><a href="mailto:autocentrum@danasyn.cz" style="color:#f90;">autocentrum@danasyn.cz</a></strong></p>
+  <script>
+    function toggleAnswer(id) {
+      var el = document.getElementById(id);
+      el.style.display = el.style.display === "none" ? "block" : "none";
+    }
+  </script>
 </body>
 </html>
