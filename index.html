@@ -3,87 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dan a Syn - Microsite</title>
+  <title>Autocentrum Dan a Syn</title>
   <style>
     body {
-      background: linear-gradient(to bottom, #1c1c1c, #2b2b2b);
-      font-family: Arial, sans-serif;
-      color: white;
       margin: 0;
-      padding: 0;
-      overflow-x: hidden;
+      background: linear-gradient(to bottom, #e0f7fa, #fff);
+      font-family: Arial, sans-serif;
     }
-
-    h1 {
-      text-align: center;
-      padding: 2rem;
-      color: orange;
+    .dan-container {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
     }
-
-    .walking-dan {
+    .dan {
       position: absolute;
-      bottom: 30px;
-      left: -300px;
-      width: 160px;
-      animation: walkDan 12s linear infinite;
+      left: -200px;
+      top: 50px;
+      width: 180px;
+      animation: walk 10s linear infinite;
     }
-
-    @keyframes walkDan {
-      0% { left: -300px; }
+    @keyframes walk {
+      0% { left: -200px; }
       100% { left: 100%; }
     }
-
-    #chatbot {
+    .chatbot {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #333;
-      padding: 1rem;
+      bottom: 20px;
+      right: 20px;
+      background-color: #fff;
+      border: 2px solid #444;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
-      z-index: 1000;
+      padding: 1rem;
+      max-width: 300px;
+      font-size: 14px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
-
-    #chatbot button {
-      background-color: orange;
-      color: black;
+    .chatbot button {
+      margin-top: 10px;
+      background: #007BFF;
+      color: white;
       border: none;
-      padding: 0.5rem 1rem;
-      font-weight: bold;
-      cursor: pointer;
+      padding: 0.5rem;
       border-radius: 5px;
-      margin-bottom: 0.5rem;
+      cursor: pointer;
     }
-
-    #chat-output {
-      font-size: 0.9rem;
-      margin-top: 0.5rem;
+    .chatbot button:hover {
+      background: #0056b3;
     }
   </style>
 </head>
 <body>
 
-  <h1>Dan a Syn Autocentrum</h1>
+  <div class="dan-container">
+    <img src="20250807_1529_Friendly Cartoon Handyman_simple_compose_01k22bjhateamrpxhm0tt7tbc5.gif" alt="Dan kráčí" class="dan">
+  </div>
 
-  <!-- Chodící Dan -->
-  <img src="dan-chodi.png" alt="Dan kráčí" class="walking-dan" />
-
-  <!-- Chatbot -->
-  <div id="chatbot">
-    <button onclick="chatResponse()">Zeptej se Dana</button>
-    <p id="chat-output"></p>
+  <div class="chatbot" id="chatbot">
+    <p><strong>Dan:</strong> Potřebuješ pomoct se STK?</p>
+    <button onclick="odpoved1()">Ano, mám propadlou STK</button>
+    <button onclick="odpoved2()">Co je třeba udělat?</button>
+    <p id="odpoved"></p>
   </div>
 
   <script>
-    function chatResponse() {
-      const odpovedi = [
-        "Dobrý den, STK máme volný termín zítra v 8:00!",
-        "Olej a filtr zvládneme do hodiny, cena 990 Kč.",
-        "Zavolejte nám na 123 456 789 nebo pište přes formulář.",
-        "Máte problém s rozvodem? Ne s tím doma – s autem! Oprava do 2 dnů."
-      ];
-      const index = Math.floor(Math.random() * odpovedi.length);
-      document.getElementById('chat-output').innerText = odpovedi[index];
+    function odpoved1() {
+      document.getElementById("odpoved").innerText = "To není problém. Nejbližší termín máme zítra v 7:30.";
+    }
+    function odpoved2() {
+      document.getElementById("odpoved").innerText = "Doporučujeme výměnu oleje, seřízení brzd a celkovou diagnostiku.";
     }
   </script>
 
