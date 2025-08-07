@@ -2,107 +2,71 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Autocentrum Dan a Syn</title>
-  <style>
-    body {
-      background: linear-gradient(to bottom, #1c1c1c, #2b2b2b);
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 2rem;
-    }
-    header {
-      text-align: center;
-    }
-    h1 {
-      color: orange;
-      margin-bottom: 0.5em;
-    }
-    .characters {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin: 2rem 0;
-    }
-    .characters img {
-      width: 150px;
-      transition: transform 0.5s ease-in-out;
-    }
-    .characters img:hover {
-      transform: translateY(-10px);
-    }
-    table {
-      margin: 2rem auto;
-      border-collapse: collapse;
-      width: 60%;
-    }
-    th, td {
-      border: 1px solid orange;
-      padding: 0.8rem;
-      text-align: left;
-    }
-    th {
-      background-color: #333;
-    }
-    .chatbot {
-      background-color: #222;
-      padding: 1.5rem;
-      width: 60%;
-      margin: 3rem auto;
-      border: 1px solid orange;
-      border-radius: 8px;
-    }
-    .chatbot h2 {
-      margin-top: 0;
-    }
-    .qa {
-      margin-bottom: 1.5rem;
-    }
-    .contact {
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .contact a {
-      color: orange;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocentrum Dan a Syn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 60%;
+        }
+        th, td {
+            border: 1px solid orange;
+            padding: 10px;
+        }
+        th {
+            background-color: #333;
+        }
+        .chatbot {
+            margin: 40px auto;
+            width: 60%;
+            background-color: #262626;
+            padding: 20px;
+            border: 2px solid orange;
+            text-align: left;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+        .images img {
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Autocentrum Dan a Syn</h1>
+    <h1 class="animate__animated animate__pulse animate__infinite">Autocentrum Dan a Syn</h1>
     <p>Spolehlivý partner pro STK, olej i animace!</p>
-  </header>
-
-  <div class="characters">
-    <img src="dan.png" alt="Dan">
-    <img src="syn.png" alt="Syn">
-  </div>
-
-  <table>
-    <tr><th>Služba</th><th>Cena</th></tr>
-    <tr><td>STK + Emise</td><td>1 500 Kč</td></tr>
-    <tr><td>Výměna oleje + filtr</td><td>990 Kč</td></tr>
-    <tr><td>Příprava na STK</td><td>od 800 Kč</td></tr>
-  </table>
-
-  <div class="chatbot">
-    <h2>Chytrý chatbot</h2>
-    <div class="qa">
-      <strong>Otázka:</strong> Kdy můžu na STK?<br>
-      <strong>Odpověď:</strong> V nejbližším volném termínu – třeba zítra v 7:30. Chcete rezervovat?
+    <div class="images">
+        <img src="dan.png" alt="Dan" class="animate__animated animate__bounce animate__infinite">
+        <img src="syn.png" alt="Syn" class="animate__animated animate__fadeInDown animate__delay-1s">
     </div>
-    <div class="qa">
-      <strong>Otázka:</strong> Kolik stojí výměna oleje?<br>
-      <strong>Odpověď:</strong> Základní výměna oleje s filtrem stojí 990 Kč.
-    </div>
-  </div>
 
-  <div class="contact">
-    <p>📞 Zavolejte nám: <a href="tel:+420723456789">+420 723 456 789</a></p>
-  </div>
+    <table>
+        <tr><th>Služba</th><th>Cena</th></tr>
+        <tr><td>STK + Emise</td><td>1 500 Kč</td></tr>
+        <tr><td>Výměna oleje + filtr</td><td>990 Kč</td></tr>
+        <tr><td>Příprava na STK</td><td>od 800 Kč</td></tr>
+    </table>
+
+    <div class="chatbot">
+        <h2>Chytrý chatbot</h2>
+        <p><strong>Otázka:</strong> Kdy můžu na STK?<br>
+        <strong>Odpověď:</strong> V nejbližším volném termínu – třeba zítra v 7:30. Chcete rezervovat?</p>
+
+        <p><strong>Otázka:</strong> Kolik stojí výměna oleje?<br>
+        <strong>Odpověď:</strong> Základní výměna oleje s filtrem stojí 990 Kč.</p>
+    </div>
 </body>
 </html>
