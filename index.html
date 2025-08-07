@@ -1,141 +1,91 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autocentrum Dan a Syn</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dan a Syn - Microsite</title>
   <style>
     body {
-      margin: 0;
-      font-family: Arial, sans-serif;
       background: linear-gradient(to bottom, #1c1c1c, #2b2b2b);
+      font-family: Arial, sans-serif;
       color: white;
-      padding: 2rem;
+      margin: 0;
+      padding: 0;
       overflow-x: hidden;
     }
 
     h1 {
       text-align: center;
+      padding: 2rem;
       color: orange;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 2rem;
+    .walking-dan {
+      position: absolute;
+      bottom: 30px;
+      left: -300px;
+      width: 160px;
+      animation: walkDan 12s linear infinite;
     }
 
-    th, td {
-      border: 1px solid orange;
+    @keyframes walkDan {
+      0% { left: -300px; }
+      100% { left: 100%; }
+    }
+
+    #chatbot {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #333;
       padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 165, 0, 0.6);
+      z-index: 1000;
     }
 
-    .chatbot {
-      margin-top: 3rem;
-      padding: 1rem;
-      border: 2px solid orange;
-      border-radius: 8px;
-      background-color: #1a1a1a;
-    }
-
-    .question {
-      margin-top: 1rem;
-    }
-
-    button {
+    #chatbot button {
       background-color: orange;
       color: black;
-      padding: 0.5rem 1rem;
       border: none;
-      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      font-weight: bold;
       cursor: pointer;
+      border-radius: 5px;
+      margin-bottom: 0.5rem;
     }
 
-    button:hover {
-      background-color: #ffaa00;
-    }
-
-    .answer {
+    #chat-output {
+      font-size: 0.9rem;
       margin-top: 0.5rem;
-      font-style: italic;
-    }
-
-    /* ANIMACE postavy Dana */
-    .dan-wrapper {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-      margin-top: 3rem;
-    }
-
-    .dan {
-      width: 120px;
-      position: absolute;
-      bottom: 0;
-      animation: walk 8s linear infinite;
-    }
-
-    @keyframes walk {
-      0% { left: -150px; }
-      100% { left: 100%; }
     }
   </style>
 </head>
 <body>
 
-  <h1>Autocentrum Dan a Syn</h1>
-  <p style="text-align: center;">Spolehlivý partner pro STK, olej i chytrého chatbota!</p>
+  <h1>Dan a Syn Autocentrum</h1>
 
-  <table>
-    <tr>
-      <th>Služba</th>
-      <th>Cena</th>
-    </tr>
-    <tr>
-      <td>STK + Emise</td>
-      <td>1 500 Kč</td>
-    </tr>
-    <tr>
-      <td>Výměna oleje + filtr</td>
-      <td>990 Kč</td>
-    </tr>
-    <tr>
-      <td>Příprava na STK</td>
-      <td>od 800 Kč</td>
-    </tr>
-  </table>
+  <!-- Chodící Dan -->
+  <img src="dan-chodi.png" alt="Dan kráčí" class="walking-dan" />
 
-  <!-- ANIMOVANÁ POSTAVA DANA -->
-  <div class="dan-wrapper">
-    <img src="dan_syn_chuze(1).gif" alt="Dan jde" class="dan">
-  </div>
-
-  <!-- CHATBOT -->
-  <div class="chatbot">
-    <h2>🧠 Chytrý chatbot</h2>
-
-    <div class="question">
-      <button onclick="showAnswer('stk')">Kdy můžu na STK?</button>
-      <div id="answer-stk" class="answer"></div>
-    </div>
-
-    <div class="question">
-      <button onclick="showAnswer('olej')">Kolik stojí výměna oleje?</button>
-      <div id="answer-olej" class="answer"></div>
-    </div>
+  <!-- Chatbot -->
+  <div id="chatbot">
+    <button onclick="chatResponse()">Zeptej se Dana</button>
+    <p id="chat-output"></p>
   </div>
 
   <script>
-    function showAnswer(type) {
-      if (type === 'stk') {
-        document.getElementById('answer-stk').textContent = 'V nejbližším volném termínu – třeba zítra v 7:30. Chcete rezervovat?';
-      } else if (type === 'olej') {
-        document.getElementById('answer-olej').textContent = 'Základní výměna oleje s filtrem stojí 990 Kč.';
-      }
+    function chatResponse() {
+      const odpovedi = [
+        "Dobrý den, STK máme volný termín zítra v 8:00!",
+        "Olej a filtr zvládneme do hodiny, cena 990 Kč.",
+        "Zavolejte nám na 123 456 789 nebo pište přes formulář.",
+        "Máte problém s rozvodem? Ne s tím doma – s autem! Oprava do 2 dnů."
+      ];
+      const index = Math.floor(Math.random() * odpovedi.length);
+      document.getElementById('chat-output').innerText = odpovedi[index];
     }
   </script>
 
 </body>
 </html>
-
-   
