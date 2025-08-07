@@ -1,125 +1,59 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Autocentrum Dan a Syn</title>
-  <style>
-    body {
-      background: linear-gradient(to bottom, #1c1c1c, #2b2b2b);
-      color: white;
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 2rem;
-    }
-    header {
-      text-align: center;
-    }
-    h1 {
-      color: orange;
-      margin-bottom: 0.5em;
-    }
-
-    .characters {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      margin: 3rem 0;
-      position: relative;
-    }
-
-    /* Animace DAN */
-    @keyframes danWalk {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(200px); }
-      100% { transform: translateX(0); }
-    }
-
-    /* Animace SYN */
-    @keyframes synWalk {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(-200px); }
-      100% { transform: translateX(0); }
-    }
-
-    .dan {
-      width: 150px;
-      animation: danWalk 6s ease-in-out infinite;
-    }
-
-    .syn {
-      width: 150px;
-      animation: synWalk 6s ease-in-out infinite;
-    }
-
-    table {
-      width: 80%;
-      margin: 0 auto 3rem auto;
-      border-collapse: collapse;
-      border: 1px solid orange;
-    }
-    th, td {
-      border: 1px solid orange;
-      padding: 1rem;
-      text-align: left;
-    }
-    th {
-      background-color: #333;
-    }
-
-    .chatbot {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 2rem;
-      border: 2px solid orange;
-      border-radius: 8px;
-    }
-    .chatbot h2 {
-      margin-top: 0;
-      color: orange;
-    }
-    .chatbot p {
-      margin: 0.5rem 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dan & SYN Autoservis</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #1e1e1e, #2e2e2e);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .hero {
+            margin-top: 40px;
+        }
+        .chatbox {
+            background: #333;
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+            margin: 40px auto;
+            text-align: left;
+        }
+        .chatbox p {
+            margin: 10px 0;
+        }
+        .question {
+            color: #f90;
+        }
+        .answer {
+            color: #0f0;
+        }
+        img.walking {
+            margin: 30px auto;
+            display: block;
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Autocentrum Dan a Syn</h1>
-    <p>Spolehlivý partner pro STK, olej i animace!</p>
-  </header>
+    <h1>Vítejte v Autocentru Dan & SYN</h1>
+    <div class="hero">
+        <img src="dan_syn_chuze.gif" alt="Dan a Syn jdou" class="walking">
+    </div>
 
-  <div class="characters">
-    <img src="dan.png" alt="Dan" class="dan" />
-    <img src="syn.png" alt="Syn" class="syn" />
-  </div>
+    <div class="chatbox">
+        <p class="question">❓ Potřebuji STK – kdy můžu přijet?</p>
+        <p class="answer">🟢 V 7:30 máme volno – chcete tento termín, nebo jiný?</p>
+        <p class="question">❓ Děláte i výměnu oleje?</p>
+        <p class="answer">🟢 Ano, olej a filtr vyměníme na počkání – volejte 723 456 789.</p>
+    </div>
 
-  <table>
-    <tr>
-      <th>Služba</th>
-      <th>Cena</th>
-    </tr>
-    <tr>
-      <td>STK + Emise</td>
-      <td>1 500 Kč</td>
-    </tr>
-    <tr>
-      <td>Výměna oleje + filtr</td>
-      <td>990 Kč</td>
-    </tr>
-    <tr>
-      <td>Příprava na STK</td>
-      <td>od 800 Kč</td>
-    </tr>
-  </table>
-
-  <div class="chatbot">
-    <h2>Chytrý chatbot</h2>
-    <p><strong>Otázka:</strong> Kdy můžu na STK?</p>
-    <p><strong>Odpověď:</strong> V nejbližším volném termínu – třeba zítra v 7:30. Chcete rezervovat?</p>
-
-    <p><strong>Otázka:</strong> Kolik stojí výměna oleje?</p>
-    <p><strong>Odpověď:</strong> Základní výměna oleje s filtrem stojí 990 Kč.</p>
-  </div>
+    <p>📞 <strong>723 456 789</strong> | ✉️ <strong><a href="mailto:autocentrum@danasyn.cz" style="color:#f90;">autocentrum@danasyn.cz</a></strong></p>
 </body>
 </html>
